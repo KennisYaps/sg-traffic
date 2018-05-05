@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Sidebar, Segment, Button, Menu, Header } from "semantic-ui-react";
-import './SideBar.css';
-class SideBar extends Component {
+import "./SideBarAndMap.css";
+class SideBarAndMap extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,7 +11,7 @@ class SideBar extends Component {
   }
   render() {
     return (
-      <div id="SideBar">
+      <div id="SideBarAndMap">
         {" "}
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -41,4 +41,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+export default SideBarAndMap;

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Main.css";
-import SideBar from "../SideBar/SideBar";
+import SideBarAndMap from "../SideBarAndMap/SideBarAndMap"
 
 const Main = () => (
   <div id="Main">
-    <SideBar />
+    <SideBarAndMap />
   </div>
 );
 
