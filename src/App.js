@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Welcome to My Traffic App</h1>
+        <br />
         <Main />
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Main.css";
-import SideBarAndMap from "../SideBarAndMap/SideBarAndMap";
 import { getData } from "../../utils/fetchAPI";
+import SearchBar from '../SearchBar/SearchBar';
 class Main extends Component {
   constructor() {
     super();
@@ -12,7 +12,8 @@ class Main extends Component {
   render() {
     return (
       <div id="Main">
-        <SideBarAndMap incidentsDatas={this.state.trafficIncidentsDatas} />
+        <h4>Current No Of Incidents: {this.state.trafficIncidentsDatas.length}</h4>
+        <SearchBar incidentsDatas={this.state.trafficIncidentsDatas} />
       </div>
     );
   }
