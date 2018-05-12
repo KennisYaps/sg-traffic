@@ -1,5 +1,10 @@
-#searchBar {
+#SearchBar {
   background-color: aqua;
+  margin: 2em;
+}
+form #searchBar_input {
+  height: 2em;
   width: 30em;
-  height: 2.5em;
+  background-color: aliceblue;
+  font-size: 1.4em;
 }
