@@ -30,8 +30,10 @@ class Search extends Component {
     event.preventDefault();
     let searchLocation = event.target.value;
     this.setState({ searchValue: searchLocation });
+
     let matchedResults = [];
-    let regexPattern = new RegExp(searchLocation, "igm");
+
+    let regexPattern = new RegExp(escapeSpecialRegExp(searchLocation), "igm");
     let trafficIncidentsDatas = this.props.data;
     trafficIncidentsDatas.map(data => {
       let isSearchSuccessful = data.Message.search(regexPattern);
@@ -41,5 +43,9 @@ class Search extends Component {
     return matchedResults;
   };
 }
+
+const escapeSpecialRegExp = string => {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+};
 
 export default Search;
