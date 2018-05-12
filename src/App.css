@@ -2,3 +2,15 @@
   margin: 0px;
   padding: 3em;
 }
+#title {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12em 5em 21em;
+  letter-spacing: 0.5px;
+}
+
+#title h1 {
+  font-size: 5em;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+}
