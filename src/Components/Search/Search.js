@@ -19,7 +19,7 @@ class Search extends Component {
           onSearchChange={this.handleSearchChange}
         />
         {this.state.searchValue !== "" ? (
-          <SearchResults data={this.props.data} />
+          <SearchResults data={this.props.data} results={this.props.results} />
         ) : (
           ""
         )}
