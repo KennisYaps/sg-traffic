@@ -15,20 +15,30 @@ class Search extends Component {
       <div id="Search">
         <h1>Search component</h1>
         <SearchBar
+          searchValue={this.state.searchValue}
           onSearchChange={this.handleSearchChange}
-          //   searchValue={this.state.value}
         />
-        <SearchResults />
+        {this.state.searchValue !== "" ? (
+          <SearchResults data={this.props.data} />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
   handleSearchChange = event => {
     event.preventDefault();
-    console.log("event", event.target.value);
     let searchLocation = event.target.value;
-    console.log("state1", this.state.searchValue);
     this.setState({ searchValue: searchLocation });
-    console.log("state2", this.state.searchValue);
+    let matchedResults = [];
+    let regexPattern = new RegExp(searchLocation, "igm");
+    let trafficIncidentsDatas = this.props.data;
+    trafficIncidentsDatas.map(data => {
+      let isSearchSuccessful = data.Message.search(regexPattern);
+      isSearchSuccessful === -1 ? -1 : matchedResults.push(data);
+    });
+    this.props.onSetLocation(matchedResults);
+    return matchedResults;
   };
 }
 
