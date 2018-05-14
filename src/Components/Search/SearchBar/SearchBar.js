@@ -6,7 +6,7 @@ const SearchBar = props => (
     <form>
       <input
         type="search"
-        id="searchBar_input"
+        id="searchBar-input"
         placeholder="Type Chinatown..."
         onChange={props.onSearchChange}
         value={props.searchValue}
