@@ -3,6 +3,8 @@ import Map from "../Map/Map";
 import "./Main.css";
 import { getData } from "../../utils/fetchAPI";
 import Search from "../Search/Search";
+import ReactLoading from "react-loading";
+
 class Main extends Component {
   constructor() {
     super();
@@ -12,6 +14,18 @@ class Main extends Component {
     };
   }
   render() {
+    const isLoading =
+      this.state.trafficIncidentsDatas.length < 1 ? (
+        <ReactLoading
+          id="loading-icon"
+          type={"spin"}
+          color={"black"}
+          height={66}
+          width={37}
+        />
+      ) : (
+        <Map results={this.state.matchedResults} />
+      );
     return (
       <div id="Main">
         <h1>Main Component</h1>
@@ -24,7 +38,7 @@ class Main extends Component {
           results={this.state.matchedResults}
           onRefreshData={this.handleRefresh}
         />
-        <Map results={this.state.matchedResults} />
+        {isLoading}
       </div>
     );
   }

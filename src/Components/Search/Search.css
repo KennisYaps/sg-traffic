@@ -1,3 +1,9 @@
 #Search {
   background-color: burlywood;
 }
+#Reload-Button {
+  height: 3em;
+  width: 7em;
+  font-size: 1.2em;
+  background-color: azure;
+}
