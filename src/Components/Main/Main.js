@@ -22,6 +22,7 @@ class Main extends Component {
           data={this.state.trafficIncidentsDatas}
           onSetLocation={this.handleSetLocation}
           results={this.state.matchedResults}
+          onRefreshData={this.handleRefresh}
         />
         <Map results={this.state.matchedResults} />
       </div>
@@ -34,8 +35,17 @@ class Main extends Component {
       matchedResults: incidentsDatas
     });
   }
+
   handleSetLocation = location => {
     this.setState({ matchedResults: location });
+  };
+
+  handleRefresh = async () => {
+    const incidentsDatas = await getData("TrafficIncidents");
+    this.setState({
+      trafficIncidentsDatas: incidentsDatas,
+      matchedResults: incidentsDatas
+    });
   };
 }
 

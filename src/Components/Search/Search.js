@@ -18,6 +18,9 @@ class Search extends Component {
           searchValue={this.state.searchValue}
           onSearchChange={this.handleSearchChange}
         />
+        <button id="Reload-Button" onClick={this.props.onRefreshData}>
+          Reload
+        </button>
         {this.state.searchValue !== "" ? (
           <SearchResults data={this.props.data} results={this.props.results} />
         ) : (
@@ -37,7 +40,7 @@ class Search extends Component {
     let trafficIncidentsDatas = this.props.data;
     trafficIncidentsDatas.map(data => {
       let isSearchSuccessful = data.Message.search(regexPattern);
-      isSearchSuccessful === -1 ? -1 : matchedResults.push(data);
+      return isSearchSuccessful === -1 ? -1 : matchedResults.push(data);  // [Qns]: can u put `return` this way
     });
     this.props.onSetLocation(matchedResults);
     return matchedResults;
