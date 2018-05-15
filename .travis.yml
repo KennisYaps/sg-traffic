@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '9'
+cache:
+  directories:
+  - node_modules
+script:
+- yarn test
+- yarn build
+deploy:
+  provider: heroku
+  app: sg-traffic
+  on:
+    repo: yappps/sg-traffic
+  api_key:
+    secure: ne1ACVArcQxA32bUPWJI1Ej0sxdrBvFBkowmMD2PrecK01IpROto+K4fltUkpGzhALv81hnBTdFzCEQMxZsOhQ1dgJpOfrvfYHKosbY6j97LIMB9KPBoNeABXuy5cZoo+h/kzl1Lh4Pruh2qIZv8fA5bwFCjf2Hu4pqQhSLiBcIpF/TjIUMqXDKFnMROocYqEA9siavxyV9pV4q5uWUeLnZ5H1QMipehbW6DCfBYzy0vtgbJC15DDkosDzeG0jVGZ11YX5DRgvjjd19Tu1iexT67Z01YmkqNQrDFTtVMcHubor1c+ddP3LzO/XEr19zeIJd3n5Yv+edXT1xNOaukk+ISQ97iDfOULtZK9aGu18g7lrSEGH9SwiZ8LWu2xeFOuY96iDDA+8j6w6S03YZ+nQcpdbtQVYep7lYU9cyBvjDVHnL4YDK6plww7WfzXMcXsXIdlWD8U5vz2N7IWj2+ZfpfSN5UhqAnrVtWcJ7EMfD/aqaIFUNloEG16yoyVtIgQUL+gfiSYx14mE0qgOZrU9HOQo5tN0xjmCHMFYrhocnURW6uWrEix76mHJGT8XpGoE8ShrLpDEB6djCZhxClGI4YBMy3sVaW4MMFpGMdGjTVQucJJ0Ah/6Qx66wEbkm5JUwDTDfyTaj/GgkV4fC6b3DilFFikqFQF6C+kCPXxBM=
