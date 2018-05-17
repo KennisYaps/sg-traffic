@@ -3,7 +3,6 @@ const ONEMAP_EMAIL = process.env.REACT_APP_ONEMAP_EMAIL;
 const ONEMAP_PW = process.env.REACT_APP_ONEMAP_PW;
 const CORS_ANYWHERE_URL = `https://cors-anywhere.herokuapp.com/`;
 const fetch = require("isomorphic-fetch");
-const es6_promise = require("es6-promise").polyfill();
 
 const fetchLTAData = apiEndpoint => {
   return fetch(
