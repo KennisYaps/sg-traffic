@@ -2,6 +2,8 @@ const DATAMALL_KEY = process.env.REACT_APP_DATAMALL_API_KEY;
 const ONEMAP_EMAIL = process.env.REACT_APP_ONEMAP_EMAIL;
 const ONEMAP_PW = process.env.REACT_APP_ONEMAP_PW;
 const CORS_ANYWHERE_URL = `https://cors-anywhere.herokuapp.com/`;
+const fetch = require("isomorphic-fetch");
+const es6_promise = require("es6-promise").polyfill();
 
 const fetchLTAData = apiEndpoint => {
   return fetch(
@@ -41,14 +43,13 @@ export const getSearchResults = async searchValues => {
   if (response.ok) {
     try {
       const json = await response.json();
-      const totalSearchFound = json.found;
       const resultsDisplayed = json.results;
 
-      if (totalSearchFound !== resultsDisplayed) {
-        const message = `Please indicate the full address if you did not manage to get the data\n +
-          ${resultsDisplayed}`;
-        return resultsDisplayed;
-      }
+      // if (totalSearchFound !== resultsDisplayed) {
+      //   const message = `Please indicate the full address if you did not manage to get the data\n +
+      //     ${resultsDisplayed}`;
+      //   return resultsDisplayed;
+      // }
       return resultsDisplayed;
     } catch (error) {
       console.error("Network error?");
