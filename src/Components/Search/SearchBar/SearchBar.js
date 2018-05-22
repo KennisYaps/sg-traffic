@@ -1,8 +1,8 @@
 import React from "react";
 import "./SearchBar.css";
 const SearchBar = props => (
-  <div id="SearchBar">
-    <h1>SearchBar component</h1>
+  <span id="SearchBar">
+    {/* <h1>SearchBar component</h1> */}
     <form>
       <input
         type="search"
@@ -12,7 +12,7 @@ const SearchBar = props => (
         value={props.searchValue}
       />
     </form>
-  </div>
+  </span>
 );
 
 export default SearchBar;
