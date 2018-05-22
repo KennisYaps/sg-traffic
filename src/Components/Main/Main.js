@@ -28,7 +28,7 @@ class Main extends Component {
       );
     return (
       <div id="Main">
-        <h1>Main Component</h1>
+        {/* <h1>Main Component</h1> */}
         <h4>
           Current Traffic Incident: {this.state.trafficIncidentsDatas.length}{" "}
         </h4>
