@@ -1,6 +1,5 @@
 #SearchResults {
   background-color: white;
-  margin: 0.5em 1em;
   letter-spacing: 0.5px;
 }
 
@@ -12,4 +11,3 @@ table th {
 #SearchResults tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
