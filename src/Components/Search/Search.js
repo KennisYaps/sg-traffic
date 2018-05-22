@@ -23,6 +23,9 @@ class Search extends Component {
             <i className="material-icons">refresh</i>
           </button>
         </div>
+        <h4 id="display-Incident-Number">
+          <b>Current Traffic Incident: {this.props.data.length}</b>
+        </h4>
         {this.state.searchValue !== "" ? (
           <SearchResults data={this.props.data} results={this.props.results} />
         ) : (

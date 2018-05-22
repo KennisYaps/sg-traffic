@@ -7,10 +7,13 @@
   grid-template-columns: 17em auto;
   grid-column-gap: 5px;
   /* background-color: rgb(18, 97, 245); */
-  padding: 1em 0.5em;
 }
 
 button .material-icons {
   font-size: 3em;
   color: black;
+}
+#display-Incident-Number {
+  font-weight: bold;
+  margin: 5px 0px;
 }
