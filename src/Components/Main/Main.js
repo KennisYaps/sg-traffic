@@ -15,7 +15,7 @@ class Main extends Component {
   }
   render() {
     const isLoading =
-      this.state.trafficIncidentsDatas.length < 1 ? (
+      this.state.trafficIncidentsDatas.length === 0 ? (
         <ReactLoading
           id="loading-icon"
           type={"spin"}
