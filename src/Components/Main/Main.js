@@ -32,13 +32,15 @@ class Main extends Component {
         <h4>
           Current Traffic Incident: {this.state.trafficIncidentsDatas.length}{" "}
         </h4>
-        <Search
-          data={this.state.trafficIncidentsDatas}
-          onSetLocation={this.handleSetLocation}
-          results={this.state.matchedResults}
-          onRefreshData={this.handleRefresh}
-        />
-        {isLoading}
+        <div className="Search-Map-Container">
+          <Search
+            data={this.state.trafficIncidentsDatas}
+            onSetLocation={this.handleSetLocation}
+            results={this.state.matchedResults}
+            onRefreshData={this.handleRefresh}
+          />
+          {isLoading}
+        </div>
       </div>
     );
   }

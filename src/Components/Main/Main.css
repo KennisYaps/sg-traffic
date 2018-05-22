@@ -5,3 +5,10 @@
 #loading-icon {
   text-align: center;
 }
+
+.Search-Map-Container {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 23em auto;
+  grid-column-gap: 1em;
+}
