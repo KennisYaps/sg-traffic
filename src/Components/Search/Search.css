@@ -1,9 +1,16 @@
 #Search {
-  background-color: burlywood;
+  /* background-color: burlywood; */
 }
-#Reload-Button {
-  height: 3em;
-  width: 7em;
-  font-size: 1.2em;
-  background-color: azure;
+.searchBar-ReloadButton-Container {
+  /* background-color: black; */
+  display: grid;
+  grid-template-columns: 17em auto;
+  grid-column-gap: 5px;
+  /* background-color: rgb(18, 97, 245); */
+  padding: 1em 0.5em;
+}
+
+button .material-icons {
+  font-size: 3em;
+  color: black;
 }

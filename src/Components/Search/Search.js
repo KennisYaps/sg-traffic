@@ -13,14 +13,16 @@ class Search extends Component {
   render() {
     return (
       <div id="Search">
-        <h1>Search component</h1>
-        <SearchBar
-          searchValue={this.state.searchValue}
-          onSearchChange={this.handleSearchChange}
-        />
-        <button id="Reload-Button" onClick={this.props.onRefreshData}>
-          Reload
-        </button>
+        {/* <h1>Search component</h1> */}
+        <div className="searchBar-ReloadButton-Container">
+          <SearchBar
+            searchValue={this.state.searchValue}
+            onSearchChange={this.handleSearchChange}
+          />
+          <button id="Reload-Button" onClick={this.props.onRefreshData}>
+            <i className="material-icons">refresh</i>
+          </button>
+        </div>
         {this.state.searchValue !== "" ? (
           <SearchResults data={this.props.data} results={this.props.results} />
         ) : (
@@ -40,7 +42,7 @@ class Search extends Component {
     let trafficIncidentsDatas = this.props.data;
     trafficIncidentsDatas.map(data => {
       let isSearchSuccessful = data.Message.search(regexPattern);
-      return isSearchSuccessful === -1 ? -1 : matchedResults.push(data);  // [Qns]: can u put `return` this way
+      return isSearchSuccessful === -1 ? -1 : matchedResults.push(data); // [Qns]: can u put `return` this way
     });
     this.props.onSetLocation(matchedResults);
     return matchedResults;
