@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import Main from './Components/Main/Main';
+import Main from "./Components/Main/Main";
+// import DamnImage from "./Components/Main/GetTheDamnImage";
 class App extends Component {
   render() {
     return (
@@ -9,7 +10,8 @@ class App extends Component {
           <h1 id="title-h1">What's Happening ?</h1>
           <p>Displaying Singapore's traffic condition in real time</p>
         </div>
-        <Main/>
+        <Main />
+        {/* <DamnImage /> */}
       </div>
     );
   }
