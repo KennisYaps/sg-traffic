@@ -4,7 +4,8 @@ const {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
+  TrafficLayer
 } = require("react-google-maps");
 const {
   MarkerClusterer
@@ -45,6 +46,7 @@ const Map = compose(
         />
       ))}
     </MarkerClusterer>
+    <TrafficLayer autoUpdate />
   </GoogleMap>
 ));
 
